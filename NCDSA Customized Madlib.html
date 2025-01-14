@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCDSA Valentine's Virtual Social Madlib</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffe6e6;
+            color: #ff3366;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ff3366;
+            color: white;
+            padding: 20px 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+            position: relative;
+        }
+
+        h1:after {
+            content: " 💛💙";
+            font-size: 1.5rem;
+        }
+
+        form {
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #ff3366;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            background-color: #ff6680;
+        }
+
+        #story {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            background-color: #fff0f5;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            color: black;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #ff6680;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NCDSA Valentine's Virtual Social Madlib</h1>
+    </header>
+
+    <form id="madLibForm">
+        <label for="adjective1">Adjective:</label>
+        <input type="text" id="adjective1" required>
+
+        <label for="noun1">Noun:</label>
+        <input type="text" id="noun1" required>
+
+        <label for="pluralNoun">Plural Noun:</label>
+        <input type="text" id="pluralNoun" required>
+
+        <label for="verb1">Verb (past tense):</label>
+        <input type="text" id="verb1" required>
+
+        <label for="verb2">Verb:</label>
+        <input type="text" id="verb2" required>
+
+        <label for="adjective2">Another Adjective:</label>
+        <input type="text" id="adjective2" required>
+
+        <label for="noun2">Another Noun:</label>
+        <input type="text" id="noun2" required>
+
+        <label for="place">A Place:</label>
+        <input type="text" id="place" required>
+
+        <label for="pluralNoun2">Another Plural Noun:</label>
+        <input type="text" id="pluralNoun2" required>
+
+        <label for="adjective3">Another Adjective:</label>
+        <input type="text" id="adjective3" required>
+
+        <label for="adjective4">Final Adjective:</label>
+        <input type="text" id="adjective4" required>
+
+        <button type="button" onclick="generateStory()">Generate Story</button>
+    </form>
+
+    <div id="story" style="display: none;">
+        <h2>Your Valentine's Story</h2>
+    </div>
+
+    <footer>
+        Made with 💛💙 for Valentine's Day
+    </footer>
+
+    <script>
+        function generateStory() {
+            const adjective1 = document.getElementById('adjective1').value;
+            const noun1 = document.getElementById('noun1').value;
+            const pluralNoun = document.getElementById('pluralNoun').value;
+            const verb1 = document.getElementById('verb1').value;
+            const verb2 = document.getElementById('verb2').value;
+            const adjective2 = document.getElementById('adjective2').value;
+            const noun2 = document.getElementById('noun2').value;
+            const place = document.getElementById('place').value;
+            const pluralNoun2 = document.getElementById('pluralNoun2').value;
+            const adjective3 = document.getElementById('adjective3').value;
+            const adjective4 = document.getElementById('adjective4').value;
+
+            const story = `On Valentine's Day, I logged into the NCDSA virtual Valentine's social on Teams feeling so ${adjective1}! I brought my favorite ${noun1} and joined a room full of amazing ${pluralNoun}. Everyone was ${verb1}, excited to share fun stories and learn about each other.  
+
+We started with a game of trivia where we got to ${verb2} about our favorite ${adjective2} ${noun2}. The stories about ${place} made everyone smile and laugh like ${pluralNoun2}.  
+
+Then, the music started, and we all got up to dance to the most ${adjective3} playlist ever. It was such a happy and fun day—it truly was the most ${adjective4} Valentine's Day social ever!`;
+
+            const storyDiv = document.getElementById('story');
+            storyDiv.innerHTML = `<h2>Your Valentine's Story</h2><p>${story}</p>`;
+            storyDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
